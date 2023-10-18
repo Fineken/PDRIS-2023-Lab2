@@ -1,5 +1,6 @@
 from flask import Flask, request, redirect, url_for, render_template_string
 import requests
+import json
 
 app = Flask(__name__)
 
@@ -65,7 +66,8 @@ def send_request():
         return "Invalid service", 400
 
     # Отправка запроса к выбранному сервису
-    response = requests.post(url, json=data)
+    headers = {'Content-Type': 'application/json'}  # Установка заголовка Content-Type
+    response = requests.post(url, json=data, headers=headers)
     return response.text, response.status_code
 
 if __name__ == '__main__':

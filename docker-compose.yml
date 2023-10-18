@@ -12,8 +12,3 @@ services:
     image: fineken/logger
     ports:
       - "5002:5002"
-  db:
-    image: postgres
-    environment:
-      POSTGRES_USER: user
-      POSTGRES_PASSWORD: password

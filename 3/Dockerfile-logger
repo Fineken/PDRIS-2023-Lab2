@@ -1,5 +1,0 @@
-FROM python:3.8
-COPY logger.py /app/logger.py
-WORKDIR /app
-RUN pip install Flask
-CMD ["python", "logger.py"]
