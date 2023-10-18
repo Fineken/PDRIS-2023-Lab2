@@ -1,0 +1,19 @@
+version: '3'
+services:
+  web:
+    image: fineken/lab2
+    ports:
+      - "8000:8000"
+  data_processor:
+    image: fineken/data_processor
+    ports:
+      - "5001:5001"
+  logger:
+    image: fineken/logger
+    ports:
+      - "5002:5002"
+  db:
+    image: postgres
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password

@@ -1,0 +1,5 @@
+FROM python:3.8
+COPY data_processor.py /app/data_processor.py
+WORKDIR /app
+RUN pip install Flask
+CMD ["python", "data_processor.py"]
